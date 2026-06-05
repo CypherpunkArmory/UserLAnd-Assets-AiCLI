@@ -23,7 +23,10 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 
 #install ai cli tools system-wide for all users
-npm install -g @anthropic-ai/claude-code @google/gemini-cli @openai/codex @github/copilot
+npm install -g @anthropic-ai/claude-code
+npm install -g @google/gemini-cli
+npm install -g @openai/codex
+npm install -g @github/copilot
 
 #clean up after ourselves
 apt-get clean
