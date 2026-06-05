@@ -7,17 +7,12 @@ version: 2
 jobs:
   build_arm:
     machine: true
+    resource_class: arm.medium
 
     working_directory: ~/UserLAnd-Assets-AiCLI
 
     steps:
       - checkout
-      - run:
-          name: update packages
-          command: sudo apt-get update
-      - run:
-          name: install binfmt-support
-          command: sudo apt-get install binfmt-support qemu qemu-user-static
       - run:
           name: build arm assets
           command: ./buildArch.sh arm
@@ -28,17 +23,12 @@ jobs:
 
   build_arm64:
     machine: true
+    resource_class: arm.medium
 
     working_directory: ~/UserLAnd-Assets-AiCLI
 
     steps:
       - checkout
-      - run:
-          name: update packages
-          command: sudo apt-get update
-      - run:
-          name: install binfmt-support
-          command: sudo apt-get install binfmt-support qemu qemu-user-static
       - run:
           name: build arm64 assets
           command: ./buildArch.sh arm64
